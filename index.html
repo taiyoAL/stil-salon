@@ -696,5 +696,23 @@ section.visible {
     <span>© 2026 Парикмахерская «Стиль»</span>
     <span>Сайт-портфолио</span>
   </footer>
-</body>
+<script>
+  const sections = document.querySelectorAll("section");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+        observer.unobserve(entry.target);
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  sections.forEach((section) => {
+    observer.observe(section);
+  });
+</script>
+      </body>
 </html>
