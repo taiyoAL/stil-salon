@@ -108,16 +108,22 @@
       max-width: 450px;
     }
 
-    .hero-image {
-      min-height: 390px;
-      border-radius: 24px;
-      background:
-        linear-gradient(0deg, rgba(30,40,28,.15), transparent),
-        url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1100&q=85")
-        center/cover;
-      position: relative;
-      overflow: hidden;
-    }
+   .hero-image {
+  min-height: 390px;
+  border-radius: 24px;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(15, 20, 14, 0.05) 0%,
+      rgba(15, 20, 14, 0.15) 45%,
+      rgba(15, 20, 14, 0.65) 100%
+    ),
+    url("https://images.unsplash.com/photo-1503951914875-452162b0f3f1?auto=format&fit=crop&w=1100&q=85")
+    center/cover;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 50px rgba(20, 30, 18, 0.18);
+}
 
     .image-label {
       position: absolute;
