@@ -361,7 +361,7 @@
     <div class="container hero">
       <div>
         <div class="eyebrow">Парикмахерская · Саранск</div>
-        <h1>Твой стиль.<br>Твои правила.</h1>
+        <h1>Твой образ.<br><span class="hero-accent">Твои правила.</span></h1>
         <p>Стрижки и уход без суеты. Подберём образ, в котором ты будешь чувствовать себя уверенно.</p>
         <a class="button" href="#contacts">Выбрать время ↗</a>
       </div>
@@ -491,6 +491,28 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+    .hero-accent {
+  color: var(--green);
+  position: relative;
+  display: inline-block;
+}
+
+.hero-accent::after {
+  content: "";
+  display: block;
+  width: 72px;
+  height: 4px;
+  background: var(--green);
+  border-radius: 4px;
+  margin-top: 14px;
+}
+
+.hero .eyebrow {
+  display: inline-block;
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: var(--light-green);
 }
     </style>
       <section class="container" id="about">
