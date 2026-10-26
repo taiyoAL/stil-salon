@@ -355,6 +355,65 @@
           height: 260px;
         }
       }
+    /* Плавное появление страницы */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Появление главного экрана */
+.hero > div:first-child {
+  animation: fadeInUp 0.8s ease-out both;
+}
+
+.hero-image {
+  animation: fadeInUp 1s ease-out both;
+}
+
+/* Красивое движение карточек услуг */
+.service {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 14px 30px rgba(36, 40, 32, 0.10);
+}
+
+/* Плавный эффект для кнопок */
+.button {
+  transition: background 0.25s ease, transform 0.25s ease,
+              box-shadow 0.25s ease;
+}
+
+.button:hover {
+  box-shadow: 0 7px 18px rgba(80, 105, 65, 0.22);
+}
+
+/* Мягкое увеличение фотографий галереи */
+.gallery img {
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.025);
+  box-shadow: 0 12px 25px rgba(36, 40, 32, 0.14);
+}
+
+/* Уважение к настройке уменьшения движения */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
     </style>
       <section class="container" id="about">
 
