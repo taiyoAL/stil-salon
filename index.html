@@ -512,7 +512,117 @@
       </div>
     </section>
 
-    <section class="container" id="contacts">
+      <section class="container" id="reviews">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">Отзывы клиентов</div>
+          <h2>Нас рекомендуют.</h2>
+        </div>
+        <p>Нам важно, чтобы ты уходил от нас довольным своим образом.</p>
+      </div>
+
+      <div class="reviews">
+        <article class="review">
+          <div class="stars">★★★★★</div>
+          <p>«Очень приятная атмосфера, мастер внимательно выслушал пожелания. Стрижкой полностью доволен!»</p>
+          <div class="review-author">
+            <div class="review-avatar">А</div>
+            <div><strong>Александр</strong><small>Стрижка</small></div>
+          </div>
+        </article>
+
+        <article class="review">
+          <div class="stars">★★★★★</div>
+          <p>«Всё аккуратно, спокойно и без спешки. Помогли подобрать подходящий стиль. Обязательно вернусь!»</p>
+          <div class="review-author">
+            <div class="review-avatar">М</div>
+            <div><strong>Максим</strong><small>Стрижка и укладка</small></div>
+          </div>
+        </article>
+
+        <article class="review">
+          <div class="stars">★★★★★</div>
+          <p>«Понравилось внимание к деталям и результат. Получил именно тот образ, который хотел.»</p>
+          <div class="review-author">
+            <div class="review-avatar">Д</div>
+            <div><strong>Дмитрий</strong><small>Стрижка и контур</small></div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <style>
+      .reviews {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+      }
+
+      .review {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 20px;
+        padding: 24px;
+        transition: transform .3s ease, box-shadow .3s ease;
+      }
+
+      .review:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 28px rgba(36, 40, 32, .08);
+      }
+
+      .stars {
+        color: #d5a442;
+        letter-spacing: 3px;
+        font-size: 19px;
+      }
+
+      .review > p {
+        color: var(--muted);
+        font-size: 14px;
+        min-height: 95px;
+      }
+
+      .review-author {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border-top: 1px solid var(--line);
+        padding-top: 16px;
+      }
+
+      .review-avatar {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: var(--light-green);
+        color: var(--green);
+        display: grid;
+        place-items: center;
+        font-weight: bold;
+      }
+
+      .review-author strong,
+      .review-author small {
+        display: block;
+      }
+
+      .review-author small {
+        color: var(--muted);
+        margin-top: 3px;
+      }
+
+      @media (max-width: 700px) {
+        .reviews {
+          grid-template-columns: 1fr;
+        }
+
+        .review > p {
+          min-height: 0;
+        }
+      }
+    </style>
+        <section class="container" id="contacts">
       <div class="contact">
         <div>
           <div class="eyebrow">Будем рады видеть</div>
