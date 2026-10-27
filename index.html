@@ -573,7 +573,14 @@ section.visible {
     transform: translateY(0);
   }
 }
-
+@keyframes cardFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
 /* Появление главного экрана */
 .hero > div:first-child {
   animation: fadeInUp 0.8s ease-out both;
@@ -586,7 +593,7 @@ section.visible {
 /* Красивое движение карточек услуг */
 .service {
   opacity: 0;
-  animation: fadeInUp 0.7s ease forwards;
+  animation: cardFadeIn 0.7s ease forwards;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .service:hover {
