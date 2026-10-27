@@ -537,8 +537,113 @@ section.visible {
         <img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?auto=format&fit=crop&w=700&q=85" alt="Стильная стрижка">
         <img src="https://images.unsplash.com/photo-1621605815971-fbc98d665033?auto=format&fit=crop&w=700&q=85" alt="Мужская стрижка">
       </div>
+     </section>
+
+    <section class="container" id="booking">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">ОНЛАЙН-ЗАПИСЬ</div>
+          <h2>Запишись к нам.</h2>
+        </div>
+        <p>Выбери услугу и удобное время.</p>
+      </div>
+
+      <form class="booking-form" id="booking-form">
+        <label for="booking-name">Твоё имя</label>
+        <input id="booking-name" name="name" type="text"
+               placeholder="Как тебя зовут?" required>
+
+        <label for="booking-phone">Телефон</label>
+        <input id="booking-phone" name="phone" type="tel"
+               placeholder="+371..." required>
+
+        <label for="booking-service">Услуга</label>
+        <select id="booking-service" name="service" required>
+          <option value="">Выбери услугу</option>
+          <option>Стрижка — от 1 200 ₽</option>
+          <option>Укладка — от 900 ₽</option>
+          <option>Борода и контур — от 700 ₽</option>
+        </select>
+
+        <label for="booking-date">Дата</label>
+        <input id="booking-date" name="date" type="date" required>
+
+        <label for="booking-time">Время</label>
+        <select id="booking-time" name="time" required>
+          <option value="">Выбери время</option>
+          <option>10:00</option>
+          <option>11:00</option>
+          <option>12:00</option>
+          <option>13:00</option>
+          <option>14:00</option>
+          <option>15:00</option>
+          <option>16:00</option>
+          <option>17:00</option>
+          <option>18:00</option>
+          <option>19:00</option>
+        </select>
+
+        <button class="button" type="submit">Оставить заявку</button>
+        <p id="booking-message" role="status"></p>
+      </form>
     </section>
+
     <style>
+       /* Оформление онлайн-записи */
+      .booking-form {
+        max-width: 600px;
+        margin: 0 auto 60px;
+        padding: 28px;
+        background: #ffffff;
+        border: 1px solid #e5e9e1;
+        border-radius: 20px;
+        box-shadow: 0 10px 30px rgba(36, 40, 32, 0.06);
+        display: grid;
+        gap: 12px;
+      }
+
+      .booking-form label {
+        font-weight: 600;
+        margin-top: 8px;
+      }
+
+      .booking-form input,
+      .booking-form select {
+        width: 100%;
+        min-width: 0;
+        padding: 14px;
+        border: 1px solid #dce3d6;
+        border-radius: 10px;
+        background: #fff;
+        color: #252820;
+        font: inherit;
+        box-sizing: border-box;
+        transition: border-color .25s, box-shadow .25s;
+      }
+
+      .booking-form input:focus,
+      .booking-form select:focus {
+        outline: none;
+        border-color: var(--green);
+        box-shadow: 0 0 0 3px rgba(83, 109, 69, 0.12);
+      }
+
+      .booking-form .button {
+        width: 100%;
+        margin-top: 12px;
+        cursor: pointer;
+      }
+
+      #booking-message {
+        margin: 0;
+        color: var(--green);
+      }
+
+      @media (max-width: 600px) {
+        .booking-form {
+          padding: 20px;
+        }
+      }
       .gallery {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
@@ -826,10 +931,19 @@ section.visible {
   }, {
     threshold: 0.1
   });
-
-  sections.forEach((section) => {
+ sections.forEach((section) => {
     observer.observe(section);
   });
-</script>
+  const bookingForm = document.getElementById("booking-form");
+  const bookingMessage = document.getElementById("booking-message");
+
+  if (bookingForm && bookingMessage) {
+    bookingForm.addEventListener("submit", function(event) {
+      event.preventDefault();
+      bookingMessage.textContent =
+        "Спасибо! Форма заполнена. Отправка заявок пока настраивается.";
+    });
+  }
+    </script>
       </body>
 </html>
