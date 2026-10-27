@@ -180,10 +180,10 @@ animation-delay: 0.2s;
     transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-@media (hover: hover) {
-    .service:hover {
-        transform: translateY(-5px);
-        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+@media (hover: hover) and (pointer: fine) {
+    .services .service:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 14px 30px rgba(36, 40, 32, 0.10);
         border-color: var(--green);
     }
 }
