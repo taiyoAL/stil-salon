@@ -175,6 +175,17 @@ animation-delay: 0.2s;
       padding: 25px;
       border-radius: 19px;
     }
+    .service {
+    transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+@media (hover: hover) {
+    .service:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.08);
+        border-color: var(--green);
+    }
+}
 
     .service-number {
       color: var(--green);
